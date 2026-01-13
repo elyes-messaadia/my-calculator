@@ -1,4 +1,6 @@
-def calculator(number_a, number_b, operator): # Return the result with 2 numbers 
+def calculator(number_a, number_b, operator): 
+    """Take a number a and number b and return the result of the operation"""
+    
     try :
         match operator:
             case "+":
