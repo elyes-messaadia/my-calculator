@@ -40,7 +40,7 @@ def calcul_orchestrator(elements):
         print(f"sub_calculation: {sub_calculation}")
         
         for i in range(len(elements_levels)):
-            if elements_levels[i][0] == "("
+            if elements_levels[i][0] == "(":
                 parenthesis = True
                 break
             else:
