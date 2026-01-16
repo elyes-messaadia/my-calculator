@@ -20,7 +20,7 @@ def ask_operation(last_result=None):
 
     # 3. LAST_RESULT LOGIC (Cumulative calculation)
     # If last_result is None, it cannot start with an operator
-    operators = "+-*/"
+    operators = "+*/^%"
     if user_input[0] in operators:
         if last_result is None:
             return "Error: Cannot start with an operator because there is no previous result."
@@ -30,7 +30,7 @@ def ask_operation(last_result=None):
 
     # 4. CHARACTER VALIDATION (Regex)
     # Allows only numbers, operators, parentheses, spaces, dots, and commas
-    if not re.match(r'^[0-9\+\-\*\/\(\)\.\s,]+$', user_input):
+    if not re.match(r'^[0-9\+\-\*\/\(\)\%\^\!\.\s,]+$', user_input):
         return "Error: Forbidden characters or letters detected."
 
     # 5. TRANSFORMATION (Comma to Point)
