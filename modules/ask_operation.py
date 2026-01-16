@@ -34,7 +34,7 @@ def ask_operation(last_result=None):
 
     # 5. CHARACTER VALIDATION (Regex)
     # Allows only numbers, operators, parentheses, spaces, dots, and commas
-    if not re.match(r'^[0-9\+\-\*\/\(\)\.\s,]+$', user_input):
+    if not re.match(r'^[0-9\+\-\*\/\(\)\%\^\!\.\s,]+$', user_input):
         return "Error: Forbidden characters or letters detected."
 
     # 6. TRANSFORMATION (Comma to Point)
