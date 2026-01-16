@@ -67,7 +67,24 @@ def calcul_orchestrator(elements):
     # Orchestring operations when no parenthesis is found
     elements_levels_remaining = True
     i = 0
-    # First loop for multiplication and divisions
+    # First loop for factorial, modulo and power
+    while elements_levels_remaining:
+        if elements_levels[i][0] == "!":
+            elements_levels[i-1] = (calculator(elements_levels[i-1][0],0,elements_levels[i][0]),0)
+            elements_levels.pop(i)
+            i-=1
+        elif elements_levels[i][0] == "%" or elements_levels[i][0] == "^":
+            elements_levels[i-1] = (calculator(elements_levels[i-1][0],elements_levels[i+1][0],elements_levels[i][0]),0)
+            elements_levels.pop(i+1)
+            elements_levels.pop(i)
+            i-=1
+        else:
+            i+=1
+            if len(elements_levels) <= i:
+                elements_levels_remaining = False
+    elements_levels_remaining = True
+    i = 0
+    # Second loop for multiplication and divisions
     while elements_levels_remaining:
         if elements_levels[i][0] == "*" or elements_levels[i][0] == "/":
             elements_levels[i-1] = (calculator(elements_levels[i-1][0],elements_levels[i+1][0],elements_levels[i][0]),0)
@@ -80,7 +97,7 @@ def calcul_orchestrator(elements):
                 elements_levels_remaining = False
     elements_levels_remaining = True
     i = 0
-    # Second loop for additions and substractions
+    # Third loop for additions and substractions
     while elements_levels_remaining:
         if elements_levels[i][0] == "+" or elements_levels[i][0] == "-":
             elements_levels[i-1] = (calculator(elements_levels[i-1][0],elements_levels[i+1][0],elements_levels[i][0]),0)

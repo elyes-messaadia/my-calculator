@@ -1,3 +1,9 @@
+def factorial(n):
+  if n == 1:
+    return n
+  else:
+    return n*factorial(n-1)
+
 def calculator(number_a, number_b, operator): 
     """Take a number a and number b and return the result of the operation"""
     
@@ -11,6 +17,15 @@ def calculator(number_a, number_b, operator):
                 result = number_a * number_b
             case "/":
                 result = number_a / number_b
+            case "//": # Floor division
+                result = number_a // number_b
+            case "^":
+                result = pow(number_a,number_b)
+            case "%":
+                result = number_a % number_b
+            case "!":
+                result = factorial(number_a)
+            
         return result 
 
     except :

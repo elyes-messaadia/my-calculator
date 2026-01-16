@@ -10,7 +10,7 @@ def operation_parser(operation):
                 case "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | ".":
                     number += char #build the number
 
-                case "(" | ")" | "+" | "-" | "/" | "*":
+                case "(" | ")" | "+" | "-" | "/" | "*" | "^" | "%" | "!":
                     if not number=="":
                         elements += (float(number),) # add the number to elements
                         number="" # Reset the number
