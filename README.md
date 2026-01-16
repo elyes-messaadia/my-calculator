@@ -30,7 +30,7 @@ git clone https://github.com/elyes-messaadia/my-calculator.git
 
 ## Features
 
-- **Basic operations**: You can use * / + - operators.
+- **Basic operations**: You can use ! ^ % * / + - operators.
 - **Parenthesis**: Unlimited intricated parenthesis operator precedence supported.
 
 
@@ -53,7 +53,7 @@ No setup required.
 4. Ctrl+C to exit.
 
    ## Roadmap
-- cos, sin, tan, power, exp, log, factorial support
+- cos, sin, tan, exp, log support
 - nice console UI
 
    ## Authors
