@@ -86,7 +86,7 @@ def calcul_orchestrator(elements):
     i = 0
     # Second loop for multiplication and divisions
     while elements_levels_remaining:
-        if elements_levels[i][0] == "*" or elements_levels[i][0] == "/":
+        if elements_levels[i][0] == "*" or elements_levels[i][0] == "/" or elements_levels[i][0] == "//":
             elements_levels[i-1] = (calculator(elements_levels[i-1][0],elements_levels[i+1][0],elements_levels[i][0]),0)
             elements_levels.pop(i+1)
             elements_levels.pop(i)

@@ -18,13 +18,13 @@ def ask_operation(last_result=None):
         return "Error: Expression cannot start or end with a dot or a comma."
 
     # 3. DOUBLE OPERATOR CHECK (New)
-    # Detects if the same operator is used twice in a row (ex: ++, //, --, **)
+    # Detects if the same operator is used twice in a row except // (ex: ++, --, **)
     # The \s* allows detecting them even if there's a space between them
-    if re.search(r'([\+\-\*\/])\s*\1', user_input):
-        return "Error: Consecutive identical operators are not allowed (e.g., //)."
+    if re.search(r'([\+\-\*])\s*\1', user_input):
+        return "Error: Consecutive identical operators are not allowed (e.g., ++)."
 
     # 4. LAST_RESULT LOGIC (Cumulative calculation)
-    operators = "+-*/"
+    operators = "+*/"
     if user_input[0] in operators:
         if last_result is None:
             return "Error: Cannot start with an operator because there is no previous result."
