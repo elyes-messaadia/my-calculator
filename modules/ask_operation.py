@@ -33,7 +33,12 @@ def ask_operation(last_result=None):
     # 5. LAST_RESULT LOGIC (Cumulative calculation)
     operators = "+-*/"
     if user_input[0] in operators:
-        if last_result is None:
+        # Check if it's a negative number (e.g., "-3*3") or an operator continuation (e.g., "+5")
+        # A negative number has a digit or opening parenthesis right after the minus sign
+        if user_input[0] == "-" and len(user_input) > 1 and (user_input[1].isdigit() or user_input[1] == "("):
+            # This is a negative number, not an operator continuation
+            pass
+        elif last_result is None:
             return "Error: Cannot start with an operator because there is no previous result."
         else:
             # Prepend the last result to the current input string
