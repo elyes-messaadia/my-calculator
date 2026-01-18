@@ -24,7 +24,7 @@ good_taste = (  ("1+1",2.0),
             ("6/3+7",9.0),
             ("5//2+4",6.0),
             ("3.2*2",6.4),
-            ("7.5-2.5",10.0),
+            ("7.5-2.5",5.0),
             ("-3+8",5.0),
             ("(2+3)*4",20.0),
             ("6*(4-1)",18.0),
@@ -89,10 +89,11 @@ def main():
             parsed_operation = operation_parser(operation[0])
             result = calcul_orchestrator(parsed_operation)
             if result == operation[1]:
-                display(result)
+                continue
             else:
                 print(f"The operation {operation[0]} returned {result} but we expected {operation[1]}.")
-        
+        print("Finished classic operations, it will probably crash next.")
+
         for operation in bad_taste:
             parsed_operation = operation_parser(operation[0])
             result = calcul_orchestrator(parsed_operation)
