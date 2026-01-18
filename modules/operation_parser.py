@@ -33,6 +33,8 @@ def operation_parser(operation):
                             elements += ("//",)
                         elif operation[i-1] == "/": # Avoid adding another double break if there's already one
                             continue
+                        else:
+                            elements += (operation[i],)
                     else:     
                         elements += (operation[i],) 
 
