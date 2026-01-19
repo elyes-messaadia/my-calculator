@@ -7,7 +7,7 @@ def operation_parser(operation):
 
         for i in range(len(operation)): # for each character in operation string
             match operation[i]:
-                case "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | ".":
+                case "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | ".":
                     number += operation[i] #build the number
                 
                 case "(" | ")" | "+" | "-" | "/" | "*" | "^" | "%" | "!":
